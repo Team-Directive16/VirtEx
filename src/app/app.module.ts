@@ -4,17 +4,35 @@ import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
-import { HeaderComponent } from './header/header.component';
+import { HeaderComponent } from './shared/header/header.component';
+import { HomeComponent } from './unprotected/home/home.component';
+import { NewsComponent } from './unprotected/news/news.component';
+import { TermsComponent } from './unprotected/terms/terms.component';
+import { FaqComponent } from './unprotected/faq/faq.component';
+import { SupportComponent } from './unprotected/support/support.component';
+import { routing} from './app.routing';
+import { ExchangeComponent } from './unprotected/exchange/exchange.component';
+import { LoginComponent } from './unprotected/login/login.component';
+import { SignupComponent } from './unprotected/signup/signup.component'
 
 @NgModule({
   declarations: [
     AppComponent,
-    HeaderComponent
+    HeaderComponent,
+    HomeComponent,
+    NewsComponent,
+    TermsComponent,
+    FaqComponent,
+    SupportComponent,
+    ExchangeComponent,
+    LoginComponent,
+    SignupComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
-    HttpModule
+    HttpModule,
+    routing
   ],
   providers: [],
   bootstrap: [AppComponent]

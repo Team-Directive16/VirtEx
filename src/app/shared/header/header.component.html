@@ -1,22 +1,22 @@
 <div class="header">
   <div class="logo">
-    <a href="/"><img src="../../assets/virtex.png" alt="VirtEx Cryptocurrency Exchange"></a>
+    <a [routerLink]="['']"><img src="../../assets/virtex.png" alt="VirtEx Cryptocurrency Exchange"></a>
   </div>
 
   <div class="tabs">
     <ul>
-      <li><a href="/exchange">Exchange</a></li>
-      <li><a href="/news">News</a></li>
-      <li><a href="/terms">Terms</a></li>
-      <li><a href="/faq">FAQ</a></li>
-      <li><a href="/support">Support</a></li>
+      <li><a [routerLink]="['exchange']">Exchange</a></li>
+      <li><a [routerLink]="['news']">News</a></li>
+      <li><a [routerLink]="['terms']">Terms</a></li>
+      <li><a [routerLink]="['faq']">FAQ</a></li>
+      <li><a [routerLink]="['support']">Support</a></li>
     </ul>
   </div>
 
   <div class="tabs right loggedOut">
     <ul>
       <li class="message">
-        <span class="title"><a href="/login">Sign in</a> or <a href="/signup">Create an Account</a><span class="desktopNav"> to start trading.</span></span>
+        <span class="title"><a [routerLink]="['login']">Sign in</a> or <a [routerLink]="['signup']">Create an Account</a><span class="desktopNav"> to start trading.</span></span>
       </li>
     </ul>
   </div>
