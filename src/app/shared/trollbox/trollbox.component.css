@@ -1,4 +1,3 @@
-
 #TrollboxContainer .trollbox, body.trollboxPage .trollbox {
     position: relative;
 }
@@ -95,4 +94,8 @@
 #TrollboxContainer .trollbox #trollboxAnnouncement .row .left img, body.trollboxPage .trollbox #trollboxAnnouncement .row .left img {
     padding-right: 10px;
     width: 95px;
+}
+
+a:hover {
+    text-decoration: underline;
 }
