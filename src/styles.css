@@ -1,7 +1,13 @@
 /* You can add global styles to this file, and also import other style files */
 
-body {
+* {
     margin: 0;
+    padding: 0;
+}
+
+body {
     font-family: sans-serif;
-    line-height: normal;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+    font-size: 13px;
 }
