@@ -1,0 +1,80 @@
+<div class="col buyCol">
+
+  <div class="head">
+    <div class="name">BUY BTC</div>
+    <div class="info loginRequired">
+      <div class="desc">You have:</div>
+      <div class="details">
+        <div class="num" id="primaryBalance">10000.15</div>
+        <div class="currency primaryCurrency">USD</div>
+      </div>
+    </div>
+    <div class="info loginRequired">
+      <div class="desc">Lowest Ask:</div>
+      <div class="details">
+        <div class="num" id="lowestAsk">960.32000000</div>
+        <div class="currency primaryCurrency">USD</div>
+      </div>
+    </div>
+    <div class="linkContainer">
+      <div class="link loginRequired"><a href="/balances#USD" class="standard">Deposit USD</a></div>
+    </div>
+    <!-- end head -->
+  </div>
+
+  <div class="data">
+    <form action="/private.php" method="get" id="buyForm">
+      <div class="top">
+        <div class="row">
+          <div class="desc">Amount BTC:</div>
+          <div class="details">
+            <div class="currency secondaryCurrency">BTC</div>
+            <div class="num">
+              <input type="text" name="buyAmount" id="buyAmount" value="">
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="desc">Price per BTC:</div>
+          <div class="details">
+            <div class="currency primaryCurrency">USD</div>
+            <div class="num">
+              <input type="text" name="buyRate" id="buyRate" value="">
+            </div>
+          </div>
+        </div>        
+      </div>
+
+      <div class="bottom">
+        <div class="row">
+          <div class="desc">Total:</div>
+          <div class="details">
+            <div class="currency primaryCurrency">USD</div>
+            <div class="num">
+              <input type="text" name="buyTotal" id="buyTotal" value="">
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="desc">
+            <span class="loginRequired">
+                  Fee: <a href="/feeTier" class="standard"><span class="makerFee">0.20</span>/<span class="takerFee">0.20</span>%</a>
+            </span>
+          </div>
+        </div>
+        <input type="hidden" name="buyCommand" id="buyCommand" value="buy">
+        <div class="loginRequired">
+          <div class="cta">
+            <button class="theButton" type="submit">Buy BTC</button>
+          </div>
+        </div>
+        <div class="loginMessage">
+          <a [routerLink]="['../login']" class="standard">Sign In</a> or <a [routerLink]="['../signup']" class="standard">Create an Account</a> to trade.
+        </div>
+      </div>
+
+    </form>
+    <!-- end data -->
+  </div>
+  <!-- end buy col -->
+</div>

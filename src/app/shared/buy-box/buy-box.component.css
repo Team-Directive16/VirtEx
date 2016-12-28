@@ -1,0 +1,212 @@
+.col {
+    width: 34%;
+    margin: 15px 0 10px 0;
+    float: left;
+    border: 1px solid #91abac;
+}
+
+.col.sellCol {
+    margin-left: 15px;
+    float: left;
+}
+
+.col .head {
+    background-color: #f3f7f7;
+    height: 80px;
+    position: relative;
+    border-bottom: 2px solid #52a058;
+}
+
+.col .head .name {
+    text-transform: uppercase;
+    font-size: 22px;
+    float: left;
+    margin: 10px 10px;
+}
+
+.col .head .info {
+    float: left;
+    clear: left;
+    font-size: 12px;
+    margin-left: 10px;
+}
+
+.col .head .info .desc {
+    float: left;
+    width: 100px;
+}
+
+.col .head .info .details {
+    float: left;
+}
+
+.col .head .info .details .num {
+    border-bottom: 1px dotted;
+    border-right: 1px solid transparent;
+    display: inline-block;
+    cursor: pointer;
+    line-height: 13px;
+}
+
+.col .head .info .details .currency {
+    display: inline;
+}
+
+.col .head .linkContainer {
+    font-size: 10px;
+    position: absolute;
+    top: 10px;
+    right: 12px;
+}
+
+.col .head .link {
+    float: right;
+}
+
+.col .head .link2 {
+    float: right;
+}
+
+.col .data {
+    background-color: #dcecec;
+    background-image: -webkit-linear-gradient(#dcecec, #fff);
+    background-image: linear-gradient(#dcecec, #fff);
+    width: 100%;
+    height: 195px;
+    font-size: 12px;
+}
+
+.col .data .top {
+    margin: 15px 10% 0;
+    float: left;
+    width: 80%;
+}
+
+@media only screen and (max-width: 1300px) {
+    .col .data .top {
+        width: 90%;
+        margin: 15px 5% 0;
+    }
+}
+
+.col .data .stopLimitWarning {
+    clear: both;
+    padding: 5px 10% 0;
+    font-size: 10px;
+    height: 34px;
+    box-sizing: border-box;
+}
+
+@media only screen and (max-width: 1300px) {
+    .col .data .stopLimitWarning {
+        padding: 5px 5% 0;
+    }
+}
+
+.col .data .row {
+    float: left;
+    clear: left;
+    margin-bottom: 10px;
+    width: 100%;
+    display: table-row;
+    min-height: 24px;
+}
+
+.col .data .row .desc {
+    display: table-cell;
+    float: left;
+    margin-top: 3px;
+}
+
+@media only screen and (max-width: 1300px) {
+    .col .data .row .desc {
+        font-size: 11px;
+    }
+}
+
+.col .data .row .details {
+    display: table-cell;
+    width: 70%;
+    float: right;
+    border: 1px solid #91abac;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+    background-clip: padding-box;
+    -webkit-box-shadow: inset 0 0 0 #eeeeee;
+    -moz-box-shadow: inset 0 0 0 #eeeeee;
+    box-shadow: inset 0 0 0 #eeeeee;
+    font-size: 13px;
+    background-color: #e2e5e6;
+    color: #728186;
+}
+
+.col .data .row .details .num {
+    float: right;
+    padding: 2px 5px 0 0;
+    width: 70%;
+    text-align: right;
+    line-height: initial;
+}
+
+.col .data .row .details .num input {
+    float: right;
+    border: none;
+    width: 100%;
+    text-align: right;
+    margin: 0;
+    padding: 0;
+    background-color: transparent;
+    -webkit-box-shadow: inset 0 0 0 transparent;
+    -moz-box-shadow: inset 0 0 0 transparent;
+    box-shadow: inset 0 0 0 transparent;
+}
+
+.col .data .row .details .currency {
+    float: right;
+    color: #fff;
+    background: #76848b;
+    font-weight: 700;
+    padding: 3px 0;
+    width: 42px;
+    text-align: center;
+    border-radius: 0 5px 5px 0;
+    font-size: 11px;
+    margin: -1px;
+}
+
+.col .data .row .details.grey {
+    background-color: #e2e5e6;
+    color: #43575e;
+    -webkit-box-shadow: inset 0 0 0 #eeeeee;
+    -moz-box-shadow: inset 0 0 0 #eeeeee;
+    box-shadow: inset 0 0 0 #eeeeee;
+}
+
+.col .data .bottom {
+    float: left;
+    clear: left;
+    padding-top: 10px;
+    width: 80%;
+    margin: 0 10% 15px;
+    border-top: 1px dotted #b1b1b1;
+    border-right: 1px solid transparent;
+}
+
+@media only screen and (max-width: 1300px) {
+    .col .data .bottom {
+        width: 90%;
+        margin: 0 5% 15px;
+    }
+}
+
+.col .data .bottom .cta {
+    float: right;
+}
+
+.col .data .bottom .cta button {
+    padding: 4px 13px;
+}
+
+.col .data .bottom .cta.left {
+    margin-right: 10px;
+}

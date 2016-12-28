@@ -14,7 +14,9 @@ import { routing} from './app.routing';
 import { ExchangeComponent } from './unprotected/exchange/exchange.component';
 import { LoginComponent } from './unprotected/login/login.component';
 import { SignupComponent } from './unprotected/signup/signup.component';
-import { TrollboxComponent } from './shared/trollbox/trollbox.component'
+import { TrollboxComponent } from './shared/trollbox/trollbox.component';
+import { BuyBoxComponent } from './shared/buy-box/buy-box.component';
+import { SellBoxComponent } from './shared/sell-box/sell-box.component'
 
 @NgModule({
   declarations: [
@@ -28,7 +30,9 @@ import { TrollboxComponent } from './shared/trollbox/trollbox.component'
     ExchangeComponent,
     LoginComponent,
     SignupComponent,
-    TrollboxComponent
+    TrollboxComponent,
+    BuyBoxComponent,
+    SellBoxComponent
   ],
   imports: [
     BrowserModule,
