@@ -1,0 +1,98 @@
+
+#TrollboxContainer .trollbox, body.trollboxPage .trollbox {
+    position: relative;
+}
+
+#TrollboxContainer .trollbox .trollboxTable, body.trollboxPage .trollbox .trollboxTable {
+    font-size: 12px;
+}
+
+#TrollboxContainer .trollbox .trollboxTable td, body.trollboxPage .trollbox .trollboxTable td {
+    padding: 3px 13px 3px 10px;
+    word-wrap: break-word;
+    max-width: 340px;
+    line-height: initial;
+    word-break: break-word;
+}
+
+#TrollboxContainer .trollbox .trollboxTable a, body.trollboxPage .trollbox .trollboxTable a {
+    cursor: pointer;
+}
+
+#TrollboxContainer .trollbox .trollboxTable a i, body.trollboxPage .trollbox .trollboxTable a i {
+    margin: auto 0.3em auto auto;
+}
+
+#TrollboxContainer .trollbox .me, body.trollboxPage .trollbox .me {
+    margin-left: 20px;
+}
+
+#TrollboxContainer .trollbox .tiny, body.trollboxPage .trollbox .tiny {
+    font-size: 0.75em;
+}
+
+#TrollboxContainer .trollbox .head .caret, body.trollboxPage .trollbox .head .caret {
+    margin-top: 5px;
+}
+
+#TrollboxContainer .trollbox .helpPanel ul li, body.trollboxPage .trollbox .helpPanel ul li {
+    margin-bottom: 5px;
+}
+
+#TrollboxContainer .trollbox .helpPanel p, body.trollboxPage .trollbox .helpPanel p {
+    margin: 0;
+    font-size: 11px;
+}
+
+#TrollboxContainer .trollbox .data, body.trollboxPage .trollbox .data {
+    background: #f9fbfb;
+    height: 110px;
+    max-height: 2500px;
+    overflow: hidden;
+}
+
+#TrollboxContainer .trollbox #trollboxWarning, body.trollboxPage .trollbox #trollboxWarning {
+    background-color: #c81e32;
+    color: #fff;
+    padding: 3px 10px;
+    position: absolute;
+    z-index: 10;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+#TrollboxContainer .trollbox #trollboxAnnouncement, body.trollboxPage .trollbox #trollboxAnnouncement {
+    background-color: #1e2324;
+    color: #b3d5d6;
+    font-size: 16px;
+    padding: 10px 10px;
+    clear: both;
+    overflow: auto;
+}
+
+#TrollboxContainer .trollbox #trollboxAnnouncement #pfftTimer, body.trollboxPage .trollbox #trollboxAnnouncement #pfftTimer {
+    font-weight: bold;
+}
+
+#TrollboxContainer .trollbox #trollboxAnnouncement .row, body.trollboxPage .trollbox #trollboxAnnouncement .row {
+    display: table-row;
+}
+
+#TrollboxContainer .trollbox #trollboxAnnouncement .row .message, body.trollboxPage .trollbox #trollboxAnnouncement .row .message {
+    display: table-cell;
+    vertical-align: middle;
+    line-height: initial;
+}
+
+#TrollboxContainer .trollbox #trollboxAnnouncement .row .message a, body.trollboxPage .trollbox #trollboxAnnouncement .row .message a {
+    text-decoration: underline;
+}
+
+#TrollboxContainer .trollbox #trollboxAnnouncement .row .left, body.trollboxPage .trollbox #trollboxAnnouncement .row .left {
+    display: table-cell;
+}
+
+#TrollboxContainer .trollbox #trollboxAnnouncement .row .left img, body.trollboxPage .trollbox #trollboxAnnouncement .row .left img {
+    padding-right: 10px;
+    width: 95px;
+}

@@ -13,7 +13,8 @@ import { SupportComponent } from './unprotected/support/support.component';
 import { routing} from './app.routing';
 import { ExchangeComponent } from './unprotected/exchange/exchange.component';
 import { LoginComponent } from './unprotected/login/login.component';
-import { SignupComponent } from './unprotected/signup/signup.component'
+import { SignupComponent } from './unprotected/signup/signup.component';
+import { TrollboxComponent } from './shared/trollbox/trollbox.component'
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { SignupComponent } from './unprotected/signup/signup.component'
     SupportComponent,
     ExchangeComponent,
     LoginComponent,
-    SignupComponent
+    SignupComponent,
+    TrollboxComponent
   ],
   imports: [
     BrowserModule,
