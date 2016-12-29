@@ -1,3 +1,8 @@
-<p>
-  faq works!
-</p>
+<h3>Frequently asked questions(FAQ)</h3>
+<div *ngFor="let f of faq">
+    <div class="container">
+        <a role="button" data-toggle="collapse" href="#{{f.id}}" aria-expanded="false" aria-controls="collapseExample">{{f.title}}</a>
+        <p class="collapse" id="{{f.id}}">{{f.body}}</p>
+    </div>
+</div>
+<a id="ask" [routerLink]="['/ask']">Ask Question</a>

@@ -1,3 +1,27 @@
-<p>
-  support works!
-</p>
+<div class="row">
+    <div class="col-md-12">
+        <form>
+            <input type="text" placeholder="What can we help you with?" name="search" value="">
+            <button type="button" class="btn btn-lg btn-success">Search</button>
+        </form>
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-12"><a class="btn btn-default submit" href="#">Submit a ticket</a></div>
+</div>
+<div class="row list-posts" *ngFor="let post of posts">
+    <div class="row">
+        <div class="col-md-6">
+            <a href="#">{{post.title}}</a>
+            <br>
+            <small>Posted by {{post.by}} on {{post.createdOn}}</small>
+        </div>
+        <div class="col-md-2">
+            <img src="{{post.avatar}}" alt="Avatar">
+        </div>
+        <div class="col-md-6">
+            <div>{{post.body}}</div>
+            <hr>
+        </div>
+    </div>
+</div>

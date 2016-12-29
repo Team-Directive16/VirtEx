@@ -1,0 +1,27 @@
+input {
+    width: 926px;
+    height: 48px;
+    padding: 0px 12px;
+    margin: 15px 0px;
+}
+
+button {
+    border-radius: 0;
+    margin: 0;
+}
+
+.submit {
+    border-radius: 0;
+    color: #fff;
+    background-color: #0b7076;
+}
+
+.list-posts {
+    margin-top: 50px;
+}
+
+img {
+    display: block;
+    width: 50px;
+    height: 50px;
+}
