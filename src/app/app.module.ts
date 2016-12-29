@@ -16,7 +16,9 @@ import { LoginComponent } from './unprotected/login/login.component';
 import { SignupComponent } from './unprotected/signup/signup.component';
 import { TrollboxComponent } from './shared/trollbox/trollbox.component';
 import { BuyBoxComponent } from './shared/buy-box/buy-box.component';
-import { SellBoxComponent } from './shared/sell-box/sell-box.component'
+import { SellBoxComponent } from './shared/sell-box/sell-box.component';
+import { SellOrdersComponent } from './unprotected/exchange/sell-orders/sell-orders.component';
+import { BuyOrdersComponent } from './unprotected/exchange/buy-orders/buy-orders.component'
 
 @NgModule({
   declarations: [
@@ -32,7 +34,9 @@ import { SellBoxComponent } from './shared/sell-box/sell-box.component'
     SignupComponent,
     TrollboxComponent,
     BuyBoxComponent,
-    SellBoxComponent
+    SellBoxComponent,
+    SellOrdersComponent,
+    BuyOrdersComponent
   ],
   imports: [
     BrowserModule,
