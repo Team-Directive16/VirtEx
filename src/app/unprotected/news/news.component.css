@@ -1,0 +1,21 @@
+h3 {
+    margin-left: 50px;
+    color: #0b7076;
+}
+
+.news {
+    margin-top: 5px;
+}
+
+strong {
+    font-size: 14px;
+}
+
+.wrapper {
+    margin-left: 75px;
+    margin-top: 30px;
+}
+
+.comments-count>span {
+    padding: 5px;
+}

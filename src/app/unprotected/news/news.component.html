@@ -1,12 +1,17 @@
 <h3>Latest news:</h3>
-<div class="row" *ngFor="let n of news">
-    <div class="col-md-2">
-        <strong>{{n.createdOn}}</strong>
-    </div>
-    <div class="col-md-8">
-        <a [routerLink]="['/details']">{{n.title}}</a>
-    </div>
-    <div class="col-md-2">
-        <p>{{n.comments}}</p>
+<div class="wrapper">
+    <div class="row news" *ngFor="let n of news">
+        <div class="col-md-10">
+            <a [routerLink]="['/details']">{{n.title}}</a>
+            <br>
+            <small>Created on </small><strong>{{n.createdOn}}</strong>
+        </div>
+        <div class="col-md-2">
+            <div>
+                <div class="comments-count">
+                    <span class="glyphicon glyphicon-comment"></span> {{n.comments}}
+                </div>
+            </div>
+        </div>
     </div>
 </div>

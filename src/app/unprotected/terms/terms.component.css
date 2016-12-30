@@ -1,3 +1,12 @@
+* {
+    margin-left: 75px;
+    text-align: justify;
+}
+
 h4 {
     color: #0b7076;
+}
+
+a {
+    margin-top: 5px;
 }

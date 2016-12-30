@@ -1,0 +1,58 @@
+.bg {
+    margin: 0;
+    padding: 0;
+    /*min-width: 1400px;
+    min-height: 700px;*/
+    width: 1350px;
+    height: 650px;
+    background: url("http://www.noobpreneur.com/wp-content/uploads/2016/03/trade-online.jpg") no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    background-color: transparent;
+}
+
+ul {
+    list-style-type: none;
+}
+
+#page-wrap {
+    position: relative;
+    top: 100px;
+    width: 400px;
+    margin: 50px auto;
+    padding: 20px;
+    color: white;
+    background: #0b7076;
+    opacity: 0.9;
+    -moz-box-shadow: 0 0 20px black;
+    -webkit-box-shadow: 0 0 20px black;
+    box-shadow: 0 0 20px black;
+}
+
+li {
+    display: inline-block;
+}
+
+li {
+    font: 15px/2 Georgia, Serif;
+    margin: 0 0 30px 0;
+    text-indent: 40px;
+}
+
+h4 {
+    font: 19px/2 Georgia, Serif;
+    margin: 0 0 10px 0;
+    text-indent: 30px;
+}
+
+h5 {
+    font: 17px/2 Georgia, Serif;
+    margin: 0 0 30px 0;
+    text-indent: 30px;
+}
+
+.login-link {
+    color: white;
+}
