@@ -10,9 +10,11 @@ import {AskComponent} from './unprotected/faq/ask/ask.component';
 import { SupportComponent } from './unprotected/support/support.component';
 import { LoginComponent } from './unprotected/login/login.component';
 import { SignupComponent } from './unprotected/signup/signup.component';
+import { ProfileComponent } from './protected/profile/profile.component';
+import { AuthGuard } from './shared/auth.guard';
 
 const APP_ROUTES: Routes = [
-  { path: '', component: HomeComponent },
+  { path: '', component: HomeComponent , pathMatch: 'full'},
   { path: 'exchange', component: ExchangeComponent },
   { path: 'news', component: NewsComponent },
   { path: 'terms', component: TermsComponent },
@@ -21,7 +23,8 @@ const APP_ROUTES: Routes = [
   { path: 'support', component: SupportComponent },
   { path: 'login', component: LoginComponent },
   { path: 'signup', component: SignupComponent },
-  { path: 'details', component: NewsDetailsComponent }
+  { path: 'details', component: NewsDetailsComponent },
+  { path: 'profile', component: ProfileComponent , canActivate: [AuthGuard] }
 ];
 
 export const routing = RouterModule.forRoot(APP_ROUTES);
