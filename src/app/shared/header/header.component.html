@@ -13,11 +13,33 @@
     </ul>
   </div>
 
-  <div class="tabs right loggedOut">
+  <div class="tabs right loggedOut" *ngIf="!isAuth()">
     <ul>
       <li class="message">
         <span class="title"><a [routerLink]="['login']">Sign in</a> or <a [routerLink]="['signup']">Create an Account</a><span class="desktopNav"> to start trading.</span></span>
       </li>
+    </ul>
+  </div>
+
+  <div class="tabs right" *ngIf="isAuth()">
+    <ul>
+      <li>
+        <span class="title">Balances</span>
+        <ul>
+          <li><a href="#">Transfer Balances</a></li>
+          <li><a href="#">Deposits &amp; Withdrawals</a></li>
+          <li><a href="#">History</a></li>
+        </ul>
+      </li>
+      <li>
+        <span class="title">Orders</span>
+        <ul>
+          <li><a href="#">My Open Orders</a></li>
+          <li><a href="#">My Trade History</a></li>
+        </ul>
+      </li>
+      <li><a [routerLink]="['/profile']">My Profile</a></li>
+      <li><a (click)="onLogout()" style='cursor: pointer'>Logout</a></li>
     </ul>
   </div>
 </div>
