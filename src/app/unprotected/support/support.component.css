@@ -31,9 +31,13 @@ img {
     height: 50px;
 }
 
-#tool-box {
-    width: 100%;
+#troll-box {
+    width: 30%;
     position: fixed;
     right: 50px;
     bottom: 50px;
+}
+
+#troll-box:first-child {
+    width: 100%;
 }

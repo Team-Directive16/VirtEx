@@ -4,7 +4,7 @@
         <div class="col-md-10">
             <a [routerLink]="['/details']">{{n.title}}</a>
             <br>
-            <small>Created on </small><strong>{{n.createdOn}}</strong>
+            <small>Created on </small><strong>{{n.createdOn | date:'shortDate'}}</strong>
         </div>
         <div class="col-md-2">
             <div>

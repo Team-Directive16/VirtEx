@@ -1,6 +1,6 @@
 import { Injectable } from "@angular/core";
 
-import { User } from "./user.interface";
+import { User } from "./models/user.interface";
 import { Router } from "@angular/router";
 
 declare var firebase: any;
