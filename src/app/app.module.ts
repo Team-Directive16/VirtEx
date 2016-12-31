@@ -6,6 +6,10 @@ import { HttpModule } from '@angular/http';
 import { SimpleNotificationsModule } from 'angular2-notifications';
 import { ReactiveFormsModule } from '@angular/forms';
 
+//Angular Fire
+import { AngularFireModule } from 'angularfire2';
+import { config } from '../../firebase.config';
+
 //Main
 import { AppComponent } from './app.component';
 
@@ -34,23 +38,21 @@ import { CommentComponent } from './unprotected/news/details/comment.component';
 //Services
 import { AuthGuard } from "./shared/auth.guard";
 import { AuthService } from './shared/auth.service';
-import { FaqService } from './shared/services/faq.service';
-import { NewsService } from './shared/services/news.service';
-import { NewsDetailsService } from './shared/services/news-details.service';
-import { CommentsService } from './shared/services/comments.service';
+import {
+  FaqService,
+  NewsService,
+  NewsDetailsService,
+  CommentsService,
+  ChatService
+} from './shared/services/index';
 
 //Pipes
 import { FilterPosts, SortApp, OrderNews } from './shared/pipes/index';
 
 //Directives
 
-
 //Routing
 import { routing } from './app.routing';
-
-//Angular Fire
-import { AngularFireModule } from 'angularfire2';
-import { config } from '../../firebase.config';
 
 @NgModule({
   declarations: [
@@ -92,7 +94,8 @@ import { config } from '../../firebase.config';
     FaqService,
     NewsService,
     NewsDetailsService,
-    CommentsService
+    CommentsService,
+    ChatService
   ],
   bootstrap: [AppComponent]
 })
