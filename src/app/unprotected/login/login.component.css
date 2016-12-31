@@ -1,0 +1,13 @@
+.container {
+    margin-top: 50px;
+}
+
+h3 {
+    padding-bottom: 15px;
+}
+
+.sign-in {
+    margin-top: 10px;
+    border-radius: 0;
+    float: right;
+}

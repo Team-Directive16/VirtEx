@@ -1,17 +1,11 @@
-<div class="container">
+<div class="container" *ngFor="let detail of details">
     <h3>{{detail.title}}</h3>
     <br>
     <small>{{detail.createdOn | date: 'shortDate'}}  from <a href="">{{detail.byUser}}</a></small>
     <br>
     <br>
     <div>
-        {{detail.text}}
+        {{detail.body}}
     </div>
-    <h4>Comments:</h4>
-    <div *ngIf="detail.comments">
-        <div *ngFor="let comment of detail.comments">
-            <h4 class="comment-title">{{comment.commentTitle}}</h4>
-            <p>{{comment.commentBody}}</p>
-        </div>
-    </div>
+    <app-comment></app-comment>
 </div>

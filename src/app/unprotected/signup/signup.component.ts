@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators, FormControl } from "@angular/forms";
+//import { SimpleNotificationsComponent } from 'angular2-notifications';
+import { NotificationsService } from 'angular2-notifications';
+
 
 import { AuthService } from "../../shared/auth.service";
 
@@ -13,10 +16,15 @@ export class SignupComponent implements OnInit {
   error = false;
   errorMessage = '';
 
-  constructor(private fb: FormBuilder, private authService: AuthService) { }
+  constructor(private fb: FormBuilder, private authService: AuthService, private notificationService: NotificationsService) { }
 
   onSignup() {
+    if(this.myForm.invalid){
+      this.notificationService.error("Something went wrong", "Incorrect email or password");
+    }
     this.authService.signupUser(this.myForm.value);
+    this.notificationService.success("You registered successfuly", "Welcome!");
+
   }
 
   ngOnInit() {

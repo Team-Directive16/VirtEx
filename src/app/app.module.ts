@@ -29,16 +29,28 @@ import { BuyBoxComponent } from './shared/buy-box/buy-box.component';
 import { SellBoxComponent } from './shared/sell-box/sell-box.component';
 import { SellOrdersComponent } from './unprotected/exchange/sell-orders/sell-orders.component';
 import { BuyOrdersComponent } from './unprotected/exchange/buy-orders/buy-orders.component';
+import { CommentComponent } from './unprotected/news/details/comment.component';
 
 //Services
 import { AuthGuard } from "./shared/auth.guard";
 import { AuthService } from './shared/auth.service';
+import { FaqService } from './shared/services/faq.service';
+import { NewsService } from './shared/services/news.service';
+import { NewsDetailsService } from './shared/services/news-details.service';
+import { CommentsService } from './shared/services/comments.service';
 
 //Pipes
 import { FilterPosts, SortApp, OrderNews } from './shared/pipes/index';
 
+//Directives
+
+
 //Routing
 import { routing } from './app.routing';
+
+//Angular Fire
+import { AngularFireModule } from 'angularfire2';
+import { config } from '../../firebase.config';
 
 @NgModule({
   declarations: [
@@ -59,6 +71,7 @@ import { routing } from './app.routing';
     SellBoxComponent,
     SellOrdersComponent,
     BuyOrdersComponent,
+    CommentComponent,
     ProfileComponent,
     FilterPosts,
     SortApp,
@@ -70,9 +83,17 @@ import { routing } from './app.routing';
     FormsModule,
     HttpModule,
     ReactiveFormsModule,
-    routing
+    routing,
+    AngularFireModule.initializeApp(config)
   ],
-  providers: [AuthGuard, AuthService],
+  providers: [
+    AuthGuard,
+    AuthService,
+    FaqService,
+    NewsService,
+    NewsDetailsService,
+    CommentsService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
