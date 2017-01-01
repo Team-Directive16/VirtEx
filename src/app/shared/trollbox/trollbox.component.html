@@ -1,70 +1,30 @@
 <div id="TrollboxContainer" class="side">
-  <div class="box trollbox">
-    <div class="head">
-      <div class="name">Trollbox</div>
-    </div>
-    <div class="data" id="trollboxScrollArea">
-      <div class="trollContainer">
-        <div id="trollbox" class="trollbox">
-          <table id="trollboxTable" class="trollboxTable">
-            <tbody>
-              <tr id="12251477">
-                <td><strong><a onclick="$('#message').val($('#message').val() + 'dikolash, ');$('#message').focus();"><span>dikolash: </span></a>
-              </strong>jm.riondy, Like me! 2 yours wait</td>
-              </tr>
-              <tr id="12251478">
-                <td><strong><a onclick="$('#message').val($('#message').val() + 'shorts, ');$('#message').focus();"><span>shorts: </span></a>
-              </strong>Anondran, i dont understand via </td>
-              </tr>
-              <tr id="12251479">
-                <td><strong><a onclick="$('#message').val($('#message').val() + 'Sora, ');$('#message').focus();"><span>Sora: </span></a>
-              </strong>YAdaminer, it will be beneficial trust me.</td>
-              </tr>
-              <tr id="12251480">
-                <td><strong><a onclick="$('#message').val($('#message').val() + 'bartek.stachyra, ');$('#message').focus();"><span>bartek.stachyra: </span></a>
-              </strong>Xoblort, you may also cancel it for me now</td>
-              </tr>
-              <tr id="12251481">
-                <td><strong><a onclick="$('#message').val($('#message').val() + 'shorts, ');$('#message').focus();"><span>shorts: </span></a>
-              </strong>Anondran, i focus on my ponies i guess lol</td>
-              </tr>
-              <tr id="12251482">
-                <td><strong><a onclick="$('#message').val($('#message').val() + 'bartek.stachyra, ');$('#message').focus();"><span>bartek.stachyra: </span></a>
-              </strong>I can sell it here</td>
-              </tr>
-              <tr id="12251486">
-                <td><strong><a onclick="$('#message').val($('#message').val() + 'Xoblort, ');$('#message').focus();"><span class="mod"><i class="fa fa-shield"></i><span>Xoblort: </span></span>
-              </a>
-              </strong>bartek.stachyra, I do not have that option or I would have offered it to you, I am sorry.</td>
-              </tr>
-              <tr id="12251490">
-                <td><strong><a onclick="$('#message').val($('#message').val() + 'SwordsMan, ');$('#message').focus();"><span>SwordsMan: </span></a>
-              </strong>Anondran, there's 1 coin very strong in this situation buddy ;D</td>
-              </tr>
-              <tr id="12251491">
-                <td><strong><a onclick="$('#message').val($('#message').val() + 'ouweuh, ');$('#message').focus();"><span>ouweuh: </span></a>
-              </strong>can i deposit EURO onto virtex?</td>
-              </tr>
-              <tr id="12251492">
-                <td><strong><a onclick="$('#message').val($('#message').val() + 'bartek.stachyra, ');$('#message').focus();"><span>bartek.stachyra: </span></a>
-              </strong>Xoblort, ok thanks anyway.its just the time for this coin:)</td>
-              </tr>
-              <tr id="12251943">
-                <td>
-                  <strong>
-                    <a onclick="$('#message').val($('#message').val() + 'bookies, ');$('#message').focus();"><span>bookies: </span></a>
-                  </strong>ZEC?
-                </td>
-              </tr>
-            </tbody>
-          </table>
+    <div class="box trollbox">
+        <div class="head">
+            <div class="name">Trollbox</div>
         </div>
-      </div>
+        <div class="data" id="trollbox-scroll">
+            <div class="trollContainer">
+                <div id="trollbox" class="trollbox">
+                    <table id="trollboxTable" class="trollboxTable">
+                        <tbody *ngFor="let ch of chats">
+                            <tr id={{ch.$key}}>
+                                <td><strong><a><span>{{ch.username}}: </span></a>
+                                  </strong>{{ch.text}}</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <div class="messageBox">
+            <div class="msg">
+                <form>
+                    <input type="text" name="chat.text" [(ngModel)]="chat.text">
+                    <button type="submit" (click)="send()">Send</button>
+                </form>
+                <a [routerLink]="['/login']" class="standard" id="loginLink">Sign In</a> or <a [routerLink]="['/signup']" class="standard">Create an Account</a> to chat.
+            </div>
+        </div>
     </div>
-    <div class="messageBox">
-      <div class="msg">
-        <a [routerLink]="['/login']" class="standard" id="loginLink">Sign In</a> or <a [routerLink]="['/signup']" class="standard">Create an Account</a> to chat.
-      </div>
-    </div>
-  </div>
 </div>

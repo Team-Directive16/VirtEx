@@ -1,5 +1,5 @@
 import { NewsDetailsService } from '../../../shared/services/news-details.service';
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { NewsDetails } from '../../../shared/models/news-details.interface';
 
 @Component({
@@ -7,12 +7,13 @@ import { NewsDetails } from '../../../shared/models/news-details.interface';
   templateUrl: './news-details.component.html',
   styleUrls: ['./news-details.component.css']
 })
-export class NewsDetailsComponent {
+export class NewsDetailsComponent implements OnInit {
 
   details: NewsDetails[];
-  constructor(private newsDetailsService: NewsDetailsService) {
+  constructor(private newsDetailsService: NewsDetailsService) {}
+
+  ngOnInit(){
     this.newsDetailsService.getNewsDetails()
     .subscribe(nDetails => this.details = nDetails)
-    console.log(this.details);
   }
 }

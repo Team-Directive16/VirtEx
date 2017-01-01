@@ -1,4 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { FormGroup } from '@angular/forms'
+import { ChatService } from '../services/index';
+import { Chat } from '../models/index';
+import { AuthService } from '../auth.service';
 
 @Component({
   selector: 'app-trollbox',
@@ -6,10 +10,25 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./trollbox.component.css']
 })
 export class TrollboxComponent implements OnInit {
+  chats: Chat[];
+  chat: Chat;
 
-  constructor() { }
-
-  ngOnInit() {
+  constructor(private chatService: ChatService, private auth: AuthService) {
+    this.chat = {
+      text: '',
+      username: this.auth.getCurrentUser() || 'No one'
+    };
   }
 
+  ngOnInit() {
+    this.chatService.getChat().subscribe(c => this.chats = c);
+  }
+
+  send() {
+    this.chatService.create(this.chat);
+    this.chat = {
+      text: '',
+      username: this.auth.getCurrentUser() || 'No one'
+    };
+  }
 }

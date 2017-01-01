@@ -5,12 +5,14 @@
     min-width: 1px;
 }
 
-.side .box, body.trollboxPage .trollbox {
+.side .box,
+body.trollboxPage .trollbox {
     border: 1px solid #b3d5d6;
     margin-bottom: 15px;
 }
 
-.side .box .head, body.trollboxPage .trollbox .head {
+.side .box .head,
+body.trollboxPage .trollbox .head {
     height: 40px;
     background-color: #b3d5d6;
     border-bottom: 1px solid #0b7076;
@@ -18,7 +20,8 @@
     line-height: 40px;
 }
 
-.side .box .head .name, body.trollboxPage .trollbox .head .name {
+.side .box .head .name,
+body.trollboxPage .trollbox .head .name {
     margin: 0 10px;
     color: #3a4449;
     text-transform: uppercase;
@@ -32,32 +35,42 @@
     padding: 10px;
 }
 
-#TrollboxContainer .trollbox .trollboxTable a, body.trollboxPage .trollbox .trollboxTable a {
+#TrollboxContainer .trollbox .trollboxTable a,
+body.trollboxPage .trollbox .trollboxTable a {
     cursor: pointer;
 }
 
-#TrollboxContainer .trollbox .trollboxTable, body.trollboxPage .trollbox .trollboxTable {
+#TrollboxContainer .trollbox .trollboxTable,
+body.trollboxPage .trollbox .trollboxTable {
     font-size: 12px;
 }
 
-#TrollboxContainer .trollbox .trollboxTable td, body.trollboxPage .trollbox .trollboxTable td {
+#TrollboxContainer .trollbox .trollboxTable td,
+body.trollboxPage .trollbox .trollboxTable td {
     padding: 3px 13px 3px 10px;
     word-wrap: break-word;
     line-height: initial;
     word-break: break-word;
 }
 
-#TrollboxContainer .trollbox .data, body.trollboxPage .trollbox .data {
+#TrollboxContainer .trollbox .data,
+body.trollboxPage .trollbox .data {
     background: #f9fbfb;
     height: 270px;
     max-height: 2500px;
-    overflow: hidden;
 }
 
 a:hover {
     text-decoration: underline;
 }
 
-a.standard:hover, .matchLink:hover, .matchlink:hover, p > a:hover {
+#trollbox-scroll {
+    overflow: scroll;
+}
+
+a.standard:hover,
+.matchLink:hover,
+.matchlink:hover,
+p>a:hover {
     color: #e39706;
 }
