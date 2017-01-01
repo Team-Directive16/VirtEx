@@ -1,10 +1,10 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from "@angular/forms";
-import { Router } from '@angular/router';
-import { SimpleNotificationsComponent } from 'angular2-notifications';
+import { FormBuilder, FormGroup, FormControl, Validators } from "@angular/forms";
 import { NotificationsService } from 'angular2-notifications';
+import { Title } from "@angular/platform-browser";
 
-import { AuthService } from "../../shared/auth.service";
+import { AuthService } from "../../shared/services/auth.service";
+import { User } from "../../shared/models/user.interface";
 
 @Component({
   selector: 'app-login',
@@ -12,37 +12,39 @@ import { AuthService } from "../../shared/auth.service";
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
-  options = {
-    timeOut: 4000,
-    position: ["top", "left"],
-    showProgressBar: false,
-    preventDuplicates: true,
-  }
+
   myForm: FormGroup;
-  error = false;
-  errorMessage = '';
 
   constructor(
-    private fb: FormBuilder,
-    private authService: AuthService,
-    private router: Router,
-    private notificationService: NotificationsService) { }
-
-  onSignin() {
-    if (this.myForm.invalid || !this.myForm.value) {
-      this.notificationService.error('Incorrect email or password', 'Please, try again');
-    } else {
-      this.authService.signinUser(this.myForm.value);
-      this.notificationService.success('Sign in success!', 'You are signed in!');
-      //this.router.navigate(['']);
-
-    }
+    private _authService: AuthService,
+    private _title: Title,
+    private _fb: FormBuilder,
+    private _notificationsService: NotificationsService) {
   }
 
-  ngOnInit(): any {
-    this.myForm = this.fb.group({
-      email: ['', Validators.required, Validators.minLength(3)],
-      password: ['', Validators.required, Validators.minLength(6)],
-    });
+  onSignIn(userInfo: User): void {  //sign in
+    if (this.myForm.invalid || !this.myForm.value) {
+      this._notificationsService.error('Incorrect email or password', 'Please, try again');
+      return;
+    }
+
+    this._authService
+      .login(userInfo)
+      .then(success => {
+        if (success) {
+          this._notificationsService.success('Success', 'User: ' + this._authService.authenticatedUser.email + ' successfully signed-in')
+        } else {
+          this._notificationsService.error('Error', 'Incorrect email, password or connection problems')
+        }
+      })
+  }
+
+  ngOnInit(): void {
+    this._title.setTitle('Sign in');  //page title
+
+    this.myForm = this._fb.group({
+      email: ['', [Validators.required, Validators.minLength(3)]],
+      password: ['', [Validators.required, Validators.minLength(6)]]
+    })
   }
 }
