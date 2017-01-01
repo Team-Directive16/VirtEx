@@ -1,8 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup } from '@angular/forms'
-import { ChatService } from '../services/index';
+import { AuthService, ChatService } from '../services/index';
 import { Chat } from '../models/index';
-import { AuthService } from '../auth.service';
 
 @Component({
   selector: 'app-trollbox',
@@ -16,7 +15,8 @@ export class TrollboxComponent implements OnInit {
   constructor(private chatService: ChatService, private auth: AuthService) {
     this.chat = {
       text: '',
-      username: this.auth.getCurrentUser() || 'No one'
+      // username: this.auth.getCurrentUser() || 'No one'
+      username: this.auth.authenticatedUser.email || 'No one'
     };
   }
 
@@ -28,7 +28,8 @@ export class TrollboxComponent implements OnInit {
     this.chatService.create(this.chat);
     this.chat = {
       text: '',
-      username: this.auth.getCurrentUser() || 'No one'
+      // username: this.auth.getCurrentUser() || 'No one'
+      username: this.auth.authenticatedUser.email || 'No one'
     };
   }
 }
