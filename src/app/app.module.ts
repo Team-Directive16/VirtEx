@@ -32,8 +32,8 @@ import { BuyOrdersComponent } from './unprotected/exchange/buy-orders/buy-orders
 import { CommentComponent } from './unprotected/news/details/comment.component';
 
 //Services
-import { AuthGuard } from "./shared/auth.guard";
-import { AuthService } from './shared/auth.service';
+import { AuthGuardService } from "./shared/services/auth-guard.service";
+import { AuthService } from './shared/services/auth.service';
 import { FaqService } from './shared/services/faq.service';
 import { NewsService } from './shared/services/news.service';
 import { NewsDetailsService } from './shared/services/news-details.service';
@@ -87,7 +87,7 @@ import { config } from '../../firebase.config';
     AngularFireModule.initializeApp(config)
   ],
   providers: [
-    AuthGuard,
+    AuthGuardService,
     AuthService,
     FaqService,
     NewsService,

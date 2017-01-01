@@ -11,7 +11,7 @@ import { SupportComponent } from './unprotected/support/support.component';
 import { LoginComponent } from './unprotected/login/login.component';
 import { SignupComponent } from './unprotected/signup/signup.component';
 import { ProfileComponent } from './protected/profile/profile.component';
-import { AuthGuard } from './shared/auth.guard';
+import { AuthGuardService } from './shared/services/auth-guard.service';
 
 const APP_ROUTES: Routes = [
   { path: '', component: HomeComponent , pathMatch: 'full'},
@@ -24,7 +24,7 @@ const APP_ROUTES: Routes = [
   { path: 'login', component: LoginComponent },
   { path: 'signup', component: SignupComponent },
   { path: 'details', component: NewsDetailsComponent },
-  { path: 'profile', component: ProfileComponent , canActivate: [AuthGuard] }
+  { path: 'profile', component: ProfileComponent , canActivate: [AuthGuardService] }
 ];
 
 export const routing = RouterModule.forRoot(APP_ROUTES);
