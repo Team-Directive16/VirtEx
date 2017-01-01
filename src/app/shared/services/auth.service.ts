@@ -6,7 +6,7 @@ import { User } from "../models/user.interface";
 
 @Injectable()
 export class AuthService {
-    authenticatedUser = { email: '' };
+    authenticatedUser = { email: null };
 
     constructor(private _af: AngularFire, private _router: Router) {
         this._af.auth.subscribe(auth => {
@@ -23,23 +23,34 @@ export class AuthService {
         return this._af.auth
     }
 
-    signUp(user: User): void {
-        this._af.auth.createUser({
-            email: user.email,
-            password: user.password,
-        }).then((createdUser) => {
-            this._af.database.object('/profiles/' + createdUser.auth.uid).set({  //adding user to firebase
-                displayName: user.firstName + ' ' + user.lastName,
-                email: createdUser.auth.email,
-                birth: user.birthDate,
-                gender: user.gender,
-                photoURL: user.photoURL
-            });
-            this._router.navigate(['/profile'])
-        }, (error) => {
-            console.trace(error);
-            this._router.navigate(['/signup'])
-        })
+    signUp(user: User): PromiseLike<boolean> {
+        return this._af.auth
+            .createUser({
+                email: user.email,
+                password: user.password,
+            })
+            .then((createdUser) => {
+                return this._af.database
+                    .object('/profiles/' + createdUser.auth.uid)
+                    .set({                                        // adding user to firebase
+                        username: user.username != null ? user.username : '',
+                        email: createdUser.auth.email,
+                        displayName: user.firstName + ' ' + user.lastName,                        
+                        birth: user.birthDate != null ? user.birthDate : '',
+                        gender: user.gender != null ? user.gender : '',
+                        photoURL: user.photoURL!= null ? user.photoURL : ''
+                    })
+            }, (error) => {
+                console.trace(error);
+                return Promise.reject(error)
+            })
+            .then(() => {
+                this._router.navigate(['/profile']);
+                return Promise.resolve(true)
+            }, (error) => {
+                this._router.navigate(['/signup']);
+                return Promise.resolve(false)
+            })
     }
 
     login(user: User): PromiseLike<boolean> {
@@ -63,6 +74,7 @@ export class AuthService {
 
     logout(): void {
         this._af.auth.logout();
+        this.authenticatedUser.email = null;
         this._router.navigate(['/exchange']);
     }
 
