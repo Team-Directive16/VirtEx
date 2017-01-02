@@ -8,6 +8,8 @@ import { TermsComponent } from './unprotected/terms/terms.component';
 import { FaqComponent } from './unprotected/faq/faq.component';
 import {AskComponent} from './unprotected/faq/ask/ask.component';
 import { SupportComponent } from './unprotected/support/support.component';
+import { TicketDetailComponent } from './unprotected/support/ticket-detail.component';
+import { SubmitTicketComponent } from './unprotected/support/submit-ticket.component';
 import { LoginComponent } from './unprotected/login/login.component';
 import { SignupComponent } from './unprotected/signup/signup.component';
 import { ProfileComponent } from './protected/profile/profile.component';
@@ -17,13 +19,15 @@ const APP_ROUTES: Routes = [
   { path: '', component: HomeComponent , pathMatch: 'full'},
   { path: 'exchange', component: ExchangeComponent },
   { path: 'news', component: NewsComponent },
+  { path: 'news/:id', component: NewsDetailsComponent },
   { path: 'terms', component: TermsComponent },
   { path: 'faq', component: FaqComponent },
   { path: 'ask', component: AskComponent },
   { path: 'support', component: SupportComponent },
+  { path: 'support/:id', component: TicketDetailComponent },
+  { path: 'submit', component: SubmitTicketComponent },
   { path: 'login', component: LoginComponent },
   { path: 'signup', component: SignupComponent },
-  { path: 'details', component: NewsDetailsComponent },
   { path: 'profile', component: ProfileComponent , canActivate: [AuthGuardService] }
 ];
 

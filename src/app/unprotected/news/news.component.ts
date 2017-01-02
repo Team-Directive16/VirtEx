@@ -10,8 +10,16 @@ import { NewsService } from '../../shared/services/news.service';
 export class NewsComponent implements OnInit {
 
   news: News[];
+  new={
+    title:'Test',
+    body:'More test',
+    createdOn:'01/01/2017',
+    byUser:'admin',
+    comments:2
+  }
 
-  constructor(private newsService: NewsService) { }
+  constructor(private newsService: NewsService) {
+   }
 
   ngOnInit() {
     this.newsService.getNews().subscribe(n => this.news = n);

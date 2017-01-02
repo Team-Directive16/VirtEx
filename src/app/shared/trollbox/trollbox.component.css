@@ -74,3 +74,12 @@ a.standard:hover,
 p>a:hover {
     color: #e39706;
 }
+
+.send,
+.clear {
+    padding: 6px;
+    margin: 0;
+    border-radius: 0;
+    color: #fff;
+    background-color: #0b7076;
+}

@@ -2,9 +2,9 @@
 <div class="wrapper">
     <div class="row news" *ngFor="let n of news">
         <div class="col-md-10">
-            <a [routerLink]="['/details']">{{n.title}}</a>
+            <a [routerLink]="['/news', n.$key]">{{n.title}}</a>
             <br>
-            <small>Created on </small><strong>{{n.createdOn | date:'shortDate'}}</strong>
+            <small>Created on </small><strong>{{n.createdOn}}</strong>
         </div>
         <div class="col-md-2">
             <div>

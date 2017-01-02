@@ -21,6 +21,8 @@ import { TermsComponent } from './unprotected/terms/terms.component';
 import { AskComponent } from './unprotected/faq/ask/ask.component';
 import { FaqComponent } from './unprotected/faq/faq.component';
 import { SupportComponent } from './unprotected/support/support.component';
+import { TicketDetailComponent } from './unprotected/support/ticket-detail.component';
+import { SubmitTicketComponent } from './unprotected/support/submit-ticket.component';
 import { ExchangeComponent } from './unprotected/exchange/exchange.component';
 import { LoginComponent } from './unprotected/login/login.component';
 import { SignupComponent } from './unprotected/signup/signup.component';
@@ -43,7 +45,7 @@ import {
   ChatService,
   FaqService,
   NewsService,
-  NewsDetailsService  
+  SupportService
 } from './shared/services/index';
 
 //Pipes
@@ -65,6 +67,8 @@ import { routing } from './app.routing';
     FaqComponent,
     AskComponent,
     SupportComponent,
+    TicketDetailComponent,
+    SubmitTicketComponent,
     ExchangeComponent,
     LoginComponent,
     SignupComponent,
@@ -93,9 +97,9 @@ import { routing } from './app.routing';
     AuthService,
     FaqService,
     NewsService,
-    NewsDetailsService,
     CommentsService,
-    ChatService
+    ChatService,
+    SupportService
   ],
   bootstrap: [AppComponent]
 })

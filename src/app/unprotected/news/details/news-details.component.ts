@@ -1,6 +1,8 @@
-import { NewsDetailsService } from '../../../shared/services/news-details.service';
 import { Component, OnInit } from '@angular/core';
-import { NewsDetails } from '../../../shared/models/news-details.interface';
+import { ActivatedRoute, Router, Params } from '@angular/router';
+import { Subscription } from 'rxjs';
+import { News } from '../../../shared/models/index';
+import { NewsService } from '../../../shared/services/index';
 
 @Component({
   selector: 'app-news-details',
@@ -8,12 +10,36 @@ import { NewsDetails } from '../../../shared/models/news-details.interface';
   styleUrls: ['./news-details.component.css']
 })
 export class NewsDetailsComponent implements OnInit {
+  subscription: Subscription;
+  detail: News;
 
-  details: NewsDetails[];
-  constructor(private newsDetailsService: NewsDetailsService) {}
+  constructor(
+    private newsService: NewsService,
+    private route: ActivatedRoute,
+    private router: Router) {
+      this.detail={
+        title:'',
+        body:'',
+        createdOn:'',
+        byUser:'',
+        comments:0
+      }
+    }
 
-  ngOnInit(){
-    this.newsDetailsService.getNewsDetails()
-    .subscribe(nDetails => this.details = nDetails)
+  ngOnInit() {
+    let key: string;
+    this.route
+      .params
+      .subscribe
+      ((params: Params) => key = params['id']);
+
+    this.subscription = this.newsService.getById(key)
+      .subscribe(nDetails => this.detail = nDetails)
+
+      console.log(this.detail);
+  }
+
+  ngOnDestroy() {
+    this.subscription.unsubscribe();
   }
 }

@@ -1,5 +1,8 @@
-export interface News {
-  title: string;
-  createdOn: Date;
-  comments: number;
+export interface News{
+  title:string;
+  createdOn:Date;
+  byUser:string;
+  body:string;
+
+  comments:number;
 }

@@ -13,10 +13,9 @@ export class TrollboxComponent implements OnInit {
   chat: Chat;
 
   constructor(private chatService: ChatService, private auth: AuthService) {
-    this.chat = {
+    this.chat={
       text: '',
-      // username: this.auth.getCurrentUser() || 'No one'
-      username: this.auth.authenticatedUser.email || 'No one'
+      username: ''
     };
   }
 
@@ -25,11 +24,15 @@ export class TrollboxComponent implements OnInit {
   }
 
   send() {
+    this.chat.username=this.auth.authenticatedUser.email || 'No one';
     this.chatService.create(this.chat);
     this.chat = {
       text: '',
-      // username: this.auth.getCurrentUser() || 'No one'
-      username: this.auth.authenticatedUser.email || 'No one'
+      username: ''
     };
+  }
+
+  clear(){
+    this.chatService.remove();
   }
 }

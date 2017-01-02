@@ -7,24 +7,22 @@
     </div>
 </div>
 <div class="row">
-    <div class="col-md-12"><a class="btn btn-default submit" href="#">Submit a ticket</a></div>
+    <div class="col-md-12"><a class="btn btn-default submit" [routerLink]="['/submit']">Submit a ticket</a></div>
 </div>
-<div class="row list-posts" *ngFor="let post of posts">
+<div class="row list-posts" *ngFor="let sp of supportTickets">
     <div class="row">
         <div class="col-md-6">
-            <a href="#">{{post.title}}</a>
+            <a [routerLink]="['/support', sp.$key]">{{sp.title}}</a>
             <br>
-            <small>Posted by {{post.by}} on {{post.createdOn}}</small>
+            <small>Posted by {{sp.by}} on {{sp.createdOn}}</small>
         </div>
         <div class="col-md-2">
-            <img src="{{post.avatar}}" alt="Avatar">
+            <img src="{{defaultAvatar}}" alt="Avatar">
         </div>
         <div class="col-md-6">
-            <div>{{post.body}}</div>
+            <div>{{sp.body}}</div>
             <hr>
         </div>
     </div>
 </div>
-<div class="row">
-    <app-trollbox id="troll-box"></app-trollbox>
-</div>
+<app-trollbox id="troll-box"></app-trollbox>
