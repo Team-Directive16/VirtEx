@@ -1,8 +1,0 @@
-<h4 class="text-center">Sumbit a ticket</h4>
-<div>Before submitting a ticket, please try looking for solution in our <a class="support-link" [routerLink]="['/support']">support page</a></div>
-<form>
-    <input type="text" class="title" name="ticket.title" [(ngModel)]="ticket.title">
-    <textarea id="submit-ticket" name="ticket.body" [(ngModel)]="ticket.body" rows="20" cols="120"></textarea>
-    <br>
-    <button type="submit" (click)="create()" class="btn btn-lg btn-default submit-ticket">Submit</button>
-</form>
