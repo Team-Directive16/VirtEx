@@ -18,7 +18,7 @@ export class ChatService {
     this.chat.push(value);
   }
 
-  remove(key:string){
+  remove(key?:string){
     this.chat.remove(key);
   }
 }
