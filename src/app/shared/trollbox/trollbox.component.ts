@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup } from '@angular/forms'
+import { AngularFire } from 'angularfire2';
 import { AuthService, ChatService } from '../services/index';
 import { Chat } from '../models/index';
 
@@ -12,7 +13,7 @@ export class TrollboxComponent implements OnInit {
   chats: Chat[];
   chat: Chat;
 
-  constructor(private chatService: ChatService, private auth: AuthService) {
+  constructor(private chatService: ChatService, private auth: AuthService, private _af: AngularFire) {
     this.chat={
       text: '',
       username: ''

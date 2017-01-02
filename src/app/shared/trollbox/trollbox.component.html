@@ -18,13 +18,14 @@
             </div>
         </div>
         <div class="messageBox">
-            <div class="msg">
-                <form>
-                    <input type="text" name="chat.text" [(ngModel)]="chat.text">
-                    <button type="submit" class="btn btn-primary send" (click)="send()">Send</button>
-                    <button type="submit" class="btn btn-primary clear" (click)="clear()">Clear</button>
-                </form>
-                <a [routerLink]="['/login']" class="standard" id="loginLink">Sign In</a> or <a [routerLink]="['/signup']" class="standard">Create an Account</a> to chat.
+            <form *ngIf="_af.auth | async">
+                <input type="text" name="chat.text" [(ngModel)]="chat.text">
+                <button type="submit" class="btn btn-primary send" (click)="send()">Send</button>
+                <button type="submit" class="btn btn-primary clear" (click)="clear()">Clear</button>
+            </form>
+            <div class="loginMessage" *ngIf="!(_af.auth | async)">
+                <a [routerLink]="['/login']" class="standard" id="loginLink">Sign In</a> or <a [routerLink]="['/signup']"
+                    class="standard">Create an Account</a> to chat.
             </div>
         </div>
     </div>
