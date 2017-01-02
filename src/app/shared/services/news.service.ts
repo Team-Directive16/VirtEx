@@ -24,6 +24,10 @@ export class NewsService {
   }
 
   update(key: string, updateInfo: any): void {
-    this.newsList.update(key, updateInfo);
+    this.newsList.update(key, updateInfo).then(()=>console.log('news updated'));
+  }
+
+  remove(key?: string): void {
+    this.newsList.remove(key).then(()=>console.log('news deleted'));
   }
 }

@@ -1,8 +1,9 @@
 export interface News{
   title:string;
-  createdOn:string;
-  byUser:string;
-  body:string;
 
-  comments:number;
+  createdOn:string;
+
+  byUser:string;
+
+  body:string;
 }

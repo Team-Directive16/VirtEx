@@ -1,3 +1,9 @@
-.comment-title {
-    color: #0b7076;
+.news-content,
+.news-body {
+    margin-left: 50px;
+}
+
+.news-content {
+    margin-top: 50px;
+    margin-bottom: 20px;
 }

@@ -1,4 +1,5 @@
 import { Injectable } from "@angular/core";
+import { Observable } from 'rxjs/Rx';
 import { AngularFireDatabase, FirebaseListObservable } from 'angularfire2';
 import { Comment } from '../models/index';
 
@@ -24,5 +25,9 @@ export class CommentsService {
 
   update(key: string, updateInfo?: string): void {
     this.comments.update(key, updateInfo);
+  }
+
+  getCount(): Observable<number> {
+    return this.af.list('/comments').map(list=>list.length);
   }
 }

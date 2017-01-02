@@ -1,7 +1,7 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { Subscription } from 'rxjs';
 import { News } from '../../shared/models/index';
-import { NewsService } from '../../shared/services/index';
+import { NewsService, CommentsService } from '../../shared/services/index';
 
 @Component({
   selector: 'app-news',
@@ -12,11 +12,17 @@ export class NewsComponent implements OnInit, OnDestroy {
   subscription: Subscription;
   news: News[];
 
-  constructor(private newsService: NewsService) {
-   }
+  constructor(
+    private newsService: NewsService,
+    private commentsService: CommentsService) {
+  }
 
   ngOnInit() {
-    this.subscription=this.newsService.getNews().subscribe(n => this.news = n);
+    this.subscription = this.newsService.getNews().subscribe(n => this.news = n);
+  }
+
+  delete(key: string): void {
+    this.newsService.remove(key);
   }
 
   ngOnDestroy() {

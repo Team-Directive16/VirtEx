@@ -1,3 +1,24 @@
-.container {
-    border: 1px #0b7076;
+.box,
+.comment-collapse {
+    margin-left: 50px;
+}
+
+.comment-collapse {
+    display: block;
+    padding-top: 40px;
+}
+
+.comment-box {
+    margin-left: 50px;
+}
+
+.comment-box input {
+    width: 860px;
+}
+
+.create-comment {
+    margin-top: 5px;
+    border-radius: 0;
+    color: #fff;
+    background-color: #0b7076;
 }

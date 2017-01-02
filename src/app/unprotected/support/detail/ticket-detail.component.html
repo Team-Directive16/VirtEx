@@ -1,6 +1,7 @@
-<h1>Hi</h1>
-
-<p>{{ticket.title}}</p>
-<p>{{ticket.by}}</p>
-<p>{{ticket.createdOn}}</p>
-<p>{{ticket.body}}</p>
+<div class="content">
+    <h4 class="header">{{ticket.title}}</h4>
+    <small>Issued on {{ticket.createdOn}} by <a href="#">{{ticket.by}}</a></small>
+    <div>
+        {{ticket.body}}
+    </div>
+</div>
