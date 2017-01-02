@@ -1,6 +1,6 @@
 export interface News{
   title:string;
-  createdOn:Date;
+  createdOn:string;
   byUser:string;
   body:string;
 
