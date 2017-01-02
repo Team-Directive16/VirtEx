@@ -1,7 +1,6 @@
 <h4>Write your question</h4>
 <form>
     <input type="text" class="title" name="question.title" [(ngModel)]="question.title">
-    <textarea id="ask" name="question.body" [(ngModel)]="question.body" rows="20" cols="120"></textarea>
     <br>
     <button type="submit" (click)="create()" class="btn btn-lg btn-default ask">Ask</button>
 </form>

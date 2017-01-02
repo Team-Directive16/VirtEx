@@ -21,8 +21,8 @@ import { TermsComponent } from './unprotected/terms/terms.component';
 import { AskComponent } from './unprotected/faq/ask/ask.component';
 import { FaqComponent } from './unprotected/faq/faq.component';
 import { SupportComponent } from './unprotected/support/support.component';
-import { TicketDetailComponent } from './unprotected/support/ticket-detail.component';
-import { SubmitTicketComponent } from './unprotected/support/submit-ticket.component';
+import { TicketDetailComponent } from './unprotected/support/detail/ticket-detail.component';
+import { SubmitTicketComponent } from './unprotected/support/submit-ticket/submit-ticket.component';
 import { ExchangeComponent } from './unprotected/exchange/exchange.component';
 import { LoginComponent } from './unprotected/login/login.component';
 import { SignupComponent } from './unprotected/signup/signup.component';
@@ -35,7 +35,7 @@ import { BuyBoxComponent } from './shared/buy-box/buy-box.component';
 import { SellBoxComponent } from './shared/sell-box/sell-box.component';
 import { SellOrdersComponent } from './unprotected/exchange/sell-orders/sell-orders.component';
 import { BuyOrdersComponent } from './unprotected/exchange/buy-orders/buy-orders.component';
-import { CommentComponent } from './unprotected/news/details/comment.component';
+import { CommentComponent } from './unprotected/news/details/comment/comment.component';
 
 //Services
 import {

@@ -3,8 +3,8 @@ import { FormBuilder, FormGroup, FormControl, Validators } from "@angular/forms"
 import { NotificationsService } from 'angular2-notifications';
 import { Title } from "@angular/platform-browser";
 
-import { AuthService } from "../../shared/services/auth.service";
-import { User } from "../../shared/models/user.interface";
+import { AuthService } from "../../shared/services/index";
+import { User } from "../../shared/models/index";
 
 @Component({
   selector: 'app-login',

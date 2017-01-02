@@ -1,8 +1,10 @@
 import { Component, OnInit } from '@angular/core';
+import { Subscription } from 'rxjs';
+import 'rxjs/add/operator/map';
+import { UserInfo } from 'firebase';
+
 import { User } from '../../shared/models/index';
 import { AuthService } from '../../shared/services/index';
-import { UserInfo } from 'firebase';
-import 'rxjs/add/operator/map';
 
 @Component({
   selector: 'app-profile',
@@ -10,6 +12,8 @@ import 'rxjs/add/operator/map';
   styleUrls: ['./profile.component.css']
 })
 export class ProfileComponent implements OnInit {
+  subscription: Subscription;
+
   user: UserInfo;
 
   defaultUserPhotoURL: string = "http://www.freeiconspng.com/uploads/profile-icon-9.png";
@@ -17,8 +21,12 @@ export class ProfileComponent implements OnInit {
   constructor(private auth: AuthService) { }
 
   ngOnInit() {
-    this.auth.getUser().map(u => u.auth.providerData[0]).subscribe(u => this.user = u);
+    this.subscription = this.auth.getUser().map(u => u.auth.providerData[0]).subscribe(u => this.user = u);
     console.log(this.user);
+  }
+
+  ngOnDestroy() {
+    this.subscription.unsubscribe();
   }
 
 }

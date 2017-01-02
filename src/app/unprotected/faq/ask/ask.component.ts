@@ -1,6 +1,6 @@
 import { Component, Input } from '@angular/core';
-import {FaqService} from '../../../shared/services/faq.service';
-import { Faq } from '../../../shared/models/faq.interface';
+import { FaqService } from '../../../shared/services/index';
+import { Faq } from '../../../shared/models/index';
 
 @Component({
   selector: 'app-ask',
@@ -16,7 +16,7 @@ export class AskComponent {
   constructor(private faqService: FaqService) {
   }
 
-  create() {
+  create(): void {
     this.faqService.create(this.question)
   }
 }

@@ -10,15 +10,15 @@ export class ChatService {
     this.chat = this.af.list('/chat');
   }
 
-  getChat() {
+  getChat(): FirebaseListObservable<Chat[]> {
     return this.af.list('/chat');
   }
 
-  create(value) {
+  create(value): void {
     this.chat.push(value);
   }
 
-  remove(key?:string){
+  remove(key?: string): void {
     this.chat.remove(key);
   }
 }

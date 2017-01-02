@@ -1,5 +1,4 @@
 import { Injectable } from "@angular/core";
-import { Http, Response } from '@angular/http';
 import { AngularFireDatabase, FirebaseListObservable, FirebaseObjectObservable } from 'angularfire2';
 import { Support } from '../models/index';
 
@@ -10,7 +9,7 @@ export class SupportService {
 
   supportList: FirebaseListObservable<Support[]>;
 
-  constructor(private af: AngularFireDatabase, private http: Http) {
+  constructor(private af: AngularFireDatabase) {
     this.supportList = this.af.list('/support');
   }
 
@@ -18,7 +17,7 @@ export class SupportService {
     return this.af.list('/support');
   }
 
-  addSupportTicket(ticket): void {
+  addSupportTicket(ticket: Support): void {
     this.supportList.push(ticket);
   }
 
@@ -26,7 +25,11 @@ export class SupportService {
     return this.af.object('/support/' + id);
   }
 
-  removeSupportTicket(key: string): void {
+  removeSupportTicket(key?: string): void {
     this.supportList.remove(key);
+  }
+
+  updateSupportTicket(key: string, updateInfo: string): void {
+    this.supportList.update(key, updateInfo);
   }
 }

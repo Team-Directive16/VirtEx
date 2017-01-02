@@ -1,10 +1,10 @@
 <h1 class="text-center">MY PROFILE</h1>
 <div class="row">
-    <div class="col-md-6" [ngSwitch]="user.photoURL">
+    <div class="col-md-2 userPhoto" [ngSwitch]="user.photoURL">
         <img *ngSwitchCase="true" src="{{user.photoURL}}" alt="Profile Pic">
         <img *ngSwitchDefault src="{{defaultUserPhotoURL}}" alt="Profile Pic">
     </div>
-    <div class="col-md-6">
+    <div class="col-md-2">
         <strong>Email: </strong><small>{{user.email}}</small>
     </div>
 </div>

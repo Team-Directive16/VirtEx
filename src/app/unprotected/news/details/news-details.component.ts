@@ -1,6 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { ActivatedRoute, Router, Params } from '@angular/router';
 import { Subscription } from 'rxjs';
+
 import { News } from '../../../shared/models/index';
 import { NewsService } from '../../../shared/services/index';
 
@@ -9,7 +10,7 @@ import { NewsService } from '../../../shared/services/index';
   templateUrl: './news-details.component.html',
   styleUrls: ['./news-details.component.css']
 })
-export class NewsDetailsComponent implements OnInit {
+export class NewsDetailsComponent implements OnInit, OnDestroy {
   subscription: Subscription;
   detail: News;
 
@@ -35,8 +36,6 @@ export class NewsDetailsComponent implements OnInit {
 
     this.subscription = this.newsService.getById(key)
       .subscribe(nDetails => this.detail = nDetails)
-
-      console.log(this.detail);
   }
 
   ngOnDestroy() {
