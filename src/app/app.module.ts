@@ -50,7 +50,7 @@ import {
 import { TradeService } from './shared/services/trade/trade.service';
 
 //Pipes
-import { FilterPosts, SortApp, OrderNews } from './shared/pipes/index';
+import { FilterPosts, SortApp, OrderNews, FixedDigitsNumber, OrderBooksPipe } from './shared/pipes/index';
 
 //Directives
 
@@ -82,7 +82,9 @@ import { routing } from './app.routing';
     ProfileComponent,
     FilterPosts,
     SortApp,
-    OrderNews
+    OrderNews,
+    FixedDigitsNumber,
+    OrderBooksPipe
   ],
   imports: [
     BrowserModule,

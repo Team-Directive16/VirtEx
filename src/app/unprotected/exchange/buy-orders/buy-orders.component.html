@@ -21,36 +21,12 @@
       </thead>
     </table>
     <table id="buyOrderBookTable" class="dataTable">
-      <tbody id="bidsTableBody">
-        <tr id="0.00745355bids" class="odd">
-          <td class="orderRate">0.00745355</td>
-          <td class="orderAmount">0.20124619</td>
-          <td class="orderTotal">0.00150000</td>
-          <td class="orderSum">0.00150000</td>
-        </tr>
-        <tr id="0.00745041bids" class="even">
-          <td class="orderRate">0.00745041</td>
-          <td class="orderAmount">40.61100000</td>
-          <td class="orderTotal">0.30256860</td>
-          <td class="orderSum">0.30406860</td>
-        </tr>
-        <tr id="0.00745036bids" class="odd">
-          <td class="orderRate">0.00745036</td>
-          <td class="orderAmount">40.26651061</td>
-          <td class="orderTotal">0.30000000</td>
-          <td class="orderSum">0.60406860</td>
-        </tr>
-        <tr id="0.00744774bids" class="even">
-          <td class="orderRate">0.00744774</td>
-          <td class="orderAmount">0.23672416</td>
-          <td class="orderTotal">0.00176306</td>
-          <td class="orderSum">0.60583166</td>
-        </tr>
-        <tr id="0.00744533bids" class="odd">
-          <td class="orderRate">0.00744533</td>
-          <td class="orderAmount">0.08776057</td>
-          <td class="orderTotal">0.00065341</td>
-          <td class="orderSum">0.60648507</td>
+      <tbody id="bidsTableBody" *ngFor="let order of (buyOrders | orderBooksPipe: 'rate':'desc':'10')">
+        <tr id="0.00746996bids" class="odd">
+          <td class="orderRate">{{order.rate}}</td>
+          <td class="orderAmount">{{order.amount}}</td>
+          <td class="orderTotal">{{order.total}}</td>
+          <td class="orderSum">{{order.sum}}</td>
         </tr>
       </tbody>
     </table>

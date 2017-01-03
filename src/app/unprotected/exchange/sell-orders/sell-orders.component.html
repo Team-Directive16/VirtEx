@@ -21,30 +21,12 @@
       </thead>
     </table>
     <table id="sellOrderBookTable" class="dataTable">
-      <tbody id="asksTableBody">
+      <tbody id="asksTableBody" *ngFor="let order of (sellOrders | orderBooksPipe: 'rate':'asc':'10')">
         <tr id="0.00746996asks" class="odd">
-          <td class="orderRate">967.00746996</td>
-          <td class="orderAmount">1.46862901</td>
-          <td class="orderTotal">1418.85800000</td>
-          <td class="orderSum">1418.85800000</td>
-        </tr>
-        <tr id="0.00746997asks" class="even">
-          <td class="orderRate">0.00746997</td>
-          <td class="orderAmount">535.51211644</td>
-          <td class="orderTotal">4.00025944</td>
-          <td class="orderSum">7.85825944</td>
-        </tr>
-        <tr id="0.00747000asks" class="odd">
-          <td class="orderRate">0.00747000</td>
-          <td class="orderAmount">215.33470000</td>
-          <td class="orderTotal">1.60855021</td>
-          <td class="orderSum">9.46680965</td>
-        </tr>
-        <tr id="0.00747597asks" class="even">
-          <td class="orderRate">0.00747597</td>
-          <td class="orderAmount">40.94440027</td>
-          <td class="orderSum">62.43205242</td>
-          <td class="orderSum">9.46680965</td>
+          <td class="orderRate">{{order.rate}}</td>
+          <td class="orderAmount">{{order.amount}}</td>
+          <td class="orderTotal">{{order.total}}</td>
+          <td class="orderSum">{{order.sum}}</td>
         </tr>
       </tbody>
     </table>
