@@ -2,7 +2,7 @@ import { Component, OnInit, OnDestroy } from '@angular/core';
 import { ActivatedRoute, Router, Params } from '@angular/router';
 import { Subscription } from 'rxjs';
 
-import { News } from '../../../shared/models/index';
+import { News} from '../../../shared/models/index';
 import { NewsService } from '../../../shared/services/index';
 
 @Component({
@@ -12,6 +12,7 @@ import { NewsService } from '../../../shared/services/index';
 })
 export class NewsDetailsComponent implements OnInit, OnDestroy {
   subscription: Subscription;
+
   detail: News;
 
   constructor(
@@ -22,8 +23,7 @@ export class NewsDetailsComponent implements OnInit, OnDestroy {
         title:'',
         body:'',
         createdOn:'',
-        byUser:'',
-        comments:0
+        byUser:''
       }
     }
 

@@ -1,7 +1,23 @@
-<h4>Comments:</h4>
-<div *ngFor="let comment of comments">
-    <div class="container">
-        <h4 class="comment-title">{{comment.title}}</h4>
-        <p>{{comment.body}}</p>
+<div class="container">
+    <a id="comment-collapse" role="button" data-toggle="collapse" href="#comments" aria-expanded="false" aria-controls="collapseExample">Comments</a>
+    <div class="box collapse" id="comments">
+        <div *ngFor="let comment of comments">
+            <div class="container">
+                <small class="comment-title">{{comment.title}}</small>
+                <div>{{comment.body}}</div>
+                <hr>
+            </div>
+        </div>
     </div>
 </div>
+<form *ngIf="af.auth | async">
+    <h4>Leave comment</h4>
+    <div class="comment-box">
+        <input type="text" name="comment.title" [(ngModel)]="comment.title">
+        <br>
+        <textarea name="comment.body" [(ngModel)]="comment.body" rows="20" cols="120"></textarea>
+        <br>
+        <button type="submit" class="btn btn-primary create-comment" (click)="createComment()">Send</button>
+    </div>
+</form>
+<div *ngIf="!(af.auth | async)">You should <a [routerLink]="['/login']">sign in</a> to leave comments</div>

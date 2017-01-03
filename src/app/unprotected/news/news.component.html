@@ -1,17 +1,12 @@
-<h3>Latest news:</h3>
+<h3>Latest news</h3>
 <div class="wrapper">
     <div class="row news" *ngFor="let n of news">
-        <div class="col-md-10">
+        <div class="col-md-12">
             <a [routerLink]="['/news', n.$key]">{{n.title}}</a>
             <br>
             <small>Created on </small><strong>{{n.createdOn}}</strong>
         </div>
-        <div class="col-md-2">
-            <div>
-                <div class="comments-count">
-                    <span class="glyphicon glyphicon-comment"></span> {{n.comments}}
-                </div>
-            </div>
-        </div>
+        <!--<button type="button" (click)="delete(n.$key)">Delete</button>-->
     </div>
 </div>
+<app-comment></app-comment>
