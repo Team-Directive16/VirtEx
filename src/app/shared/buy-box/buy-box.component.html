@@ -2,35 +2,37 @@
 
   <div class="head">
     <div class="name">BUY BTC</div>
-    <div class="info loginRequired">
+    <div class="info loginRequired" *ngIf="_af.auth | async">
       <div class="desc">You have:</div>
       <div class="details">
         <div class="num" id="primaryBalance">10000.15</div>
         <div class="currency primaryCurrency">USD</div>
       </div>
     </div>
-    <div class="info loginRequired">
+    <!--<div class="info loginRequired" *ngIf="_af.auth | async">
       <div class="desc">Lowest Ask:</div>
       <div class="details">
         <div class="num" id="lowestAsk">960.32000000</div>
         <div class="currency primaryCurrency">USD</div>
       </div>
-    </div>
+    </div>-->
     <div class="linkContainer">
-      <div class="link loginRequired"><a href="/balances#USD" class="standard">Deposit USD</a></div>
+      <div class="link loginRequired" *ngIf="_af.auth | async">
+        <a href="/balances#USD" class="standard">Deposit USD</a>
+      </div>
     </div>
     <!-- end head -->
   </div>
 
   <div class="data">
-    <form action="/private.php" method="get" id="buyForm">
+    <form [formGroup]="buyForm" (ngSubmit)="placeBidOrder()" id="buyForm">
       <div class="top">
         <div class="row">
           <div class="desc">Amount BTC:</div>
           <div class="details">
             <div class="currency secondaryCurrency">BTC</div>
             <div class="num">
-              <input type="text" name="buyAmount" id="buyAmount" value="">
+              <input formControlName="buyAmount" type="text" name="buyAmount" id="buyAmount" [(ngModel)]="amount" required />
             </div>
           </div>
         </div>
@@ -39,7 +41,7 @@
           <div class="details">
             <div class="currency primaryCurrency">USD</div>
             <div class="num">
-              <input type="text" name="buyRate" id="buyRate" value="">
+              <input formControlName="buyRate" type="text" name="buyRate" id="buyRate" [(ngModel)]="rate" required />
             </div>
           </div>
         </div>
@@ -51,25 +53,27 @@
           <div class="details">
             <div class="currency primaryCurrency">USD</div>
             <div class="num">
-              <input type="text" name="buyTotal" id="buyTotal" value="">
+              <input formControlName="buyTotal" type="text" name="buyTotal" id="buyTotal" [ngModel]="total.toFixed(8)" required />
             </div>
           </div>
         </div>
-        <div class="row">
+        <!--<div class="row">
           <div class="desc">
-            <span class="loginRequired">
+            <span class="loginRequired" *ngIf="_af.auth | async">
                   Fee: <a href="#" class="standard"><span class="makerFee">0.20</span>/<span class="takerFee">0.20</span>%</a>
             </span>
           </div>
-        </div>
-        <input type="hidden" name="buyCommand" id="buyCommand" value="buy">
-        <div class="loginRequired">
+        </div>-->
+        <!--<input type="hidden" name="buyCommand" id="buyCommand" value="buy">-->
+        <div class="loginRequired" *ngIf="_af.auth | async">
           <div class="cta">
-            <button class="theButton" type="submit">Buy BTC</button>
+            <button type="button" class="theButton" type="submit" [disabled]="!buyForm.valid">Buy BTC</button>
           </div>
         </div>
-        <div class="loginMessage">
-          <a [routerLink]="['/login']" class="standard">Sign In</a> or <a [routerLink]="['/signup']" class="standard">Create an Account</a>          to trade.
+        <div class="loginMessage" *ngIf="!(_af.auth | async)">
+          <hr>
+          <a [routerLink]="['/login']" class="standard">Sign In</a> or
+          <a [routerLink]="['/signup']" class="standard">Create an Account</a> to trade.
         </div>
       </div>
 
