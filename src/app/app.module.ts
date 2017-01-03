@@ -47,6 +47,7 @@ import {
   NewsService,
   SupportService
 } from './shared/services/index';
+import { TradeService } from './shared/services/trade/trade.service';
 
 //Pipes
 import { FilterPosts, SortApp, OrderNews } from './shared/pipes/index';
@@ -99,7 +100,8 @@ import { routing } from './app.routing';
     NewsService,
     CommentsService,
     ChatService,
-    SupportService
+    SupportService,
+    TradeService
   ],
   bootstrap: [AppComponent]
 })
